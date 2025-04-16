@@ -1,0 +1,525 @@
+/* 全局样式 */
+:root {
+  --primary-color: #4a6bff;
+  --primary-hover: #3a5bef;
+  --error-color: #ff4a4a;
+  --text-color: #333;
+  --text-light: #666;
+  --border-color: #ddd;
+  --bg-light: #f5f5f5;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+}
+
+/* 背景样式 */
+body {
+  background-image: url('../images/b.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+ul {
+  list-style: none;
+}
+
+/* 页面布局 */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 50px;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 页眉样式 */
+.page-header {
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+.main-nav a {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  color: var(--primary-color);
+}
+
+/* 认证容器 */
+.auth-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+}
+
+.auth-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.auth-header h1 {
+  font-size: 24px;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.auth-header h1.active {
+  color: var(--primary-color);
+}
+
+.auth-header .divider {
+  width: 1px;
+  height: 24px;
+  background-color: var(--border-color);
+  margin: 0 15px;
+}
+
+.auth-header a {
+  font-size: 18px;
+  color: #888;
+  font-weight: 500;
+}
+
+/* 表单样式 */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-group .fas {
+  position: absolute;
+  left: 15px;
+  color: #888;
+  font-size: 16px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.input-group input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 107, 255, 0.2);
+}
+
+/* 密码强度 */
+.password-strength {
+  margin-top: 5px;
+  font-size: 0.8em;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.password-strength.very-weak {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.password-strength.weak {
+  background-color: #ffa07a;
+  color: white;
+}
+
+.password-strength.medium {
+  background-color: #ffd700;
+  color: black;
+}
+
+.password-strength.strong {
+  background-color: #90ee90;
+  color: black;
+}
+
+.password-strength.very-strong {
+  background-color: #32cd32;
+  color: white;
+}
+
+/* 错误信息 */
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+/* 复选框 */
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.form-check input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary-color);
+}
+
+.form-check label {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.terms-link {
+  color: var(--primary-color);
+}
+
+/* 按钮 */
+.btn {
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-google {
+  background-color: var(--white);
+  color: var(--text-light);
+  border: 1px solid var(--border-color);
+}
+
+.btn-google:hover {
+  background-color: var(--bg-light);
+}
+
+/* 分隔线 */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+.divider-text {
+  color: #888;
+  font-size: 14px;
+}
+
+/* 页脚 */
+.auth-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.auth-footer h3 {
+  font-size: 18px;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.auth-footer p {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.login-link {
+  color: var(--primary-color);
+}
+
+/* 网站页脚 */
+.page-footer {
+  background-color: #2c3e50;
+  color: var(--white);
+  padding: 40px 20px 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: var(--white);
+}
+
+.footer-section p, .footer-section li {
+  margin-bottom: 10px;
+  color: #ecf0f1;
+}
+
+.footer-section a {
+  color: #ecf0f1;
+}
+
+.footer-section a:hover {
+  color: var(--primary-color);
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #bdc3c7;
+  font-size: 14px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .page-header {
+      flex-direction: column;
+      gap: 15px;
+  }
+  
+  .auth-container {
+      padding: 30px 20px;
+  }
+  
+  .footer-content {
+      grid-template-columns: 1fr;
+  }
+}
+
+.container {
+  flex: 1;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.list-group-item {
+  border: none;
+  border-bottom: 1px solid #dee2e6;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.list-group-item:hover {
+  background-color: #f8f9fa;
+}
+
+.list-group-item.active {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.progress {
+  height: 5px;
+  background-color: #e9ecef;
+}
+
+.progress-bar {
+  background-color: #007bff;
+  transition: width 0.1s linear;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn i {
+  font-size: 1.2rem;
+}
+
+#playBtn {
+  width: 60px;
+  height: 60px;
+}
+
+#playBtn i {
+  font-size: 1.5rem;
+}
+
+.register-box {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-group input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.social-login {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.google-btn {
+  background-color: #fff;
+  color: #757575;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.google-btn:hover {
+  background-color: #f5f5f5;
+}
+
+.google-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.login-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.login-link a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
