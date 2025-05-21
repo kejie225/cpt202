@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Account Deletion</h2>
+        <form id="delete-account-form">
+            <p>Are you sure you want to permanently delete your account?</p>
+            <p>This action is irreversible, and all your data will be erased.</p>
+            
+            <!-- Two-factor authentication -->
+            <label for="password">Enter your password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <label for="verification-code">Enter verification code:</label>
+            <input type="text" id="verification-code" name="verification-code" placeholder="Enter verification code" required>
+
+            <label for="confirmation-checkbox">
+                <input type="checkbox" id="confirmation-checkbox" required>
+                I confirm that I want to permanently delete my account
+            </label>
+
+            <button type="submit">Permanently Delete Account</button>
+        </form>
+
+        <!-- Pending transactions and alerts -->
+        <div id="pending-alert" class="alert">
+            <p><strong>Cannot delete account immediately</strong></p>
+            <ul id="pending-items">
+                <!-- List of pending transactions or blockers -->
+            </ul>
+        </div>
+
+        <!-- Success or Info Message -->
+        <p id="success-message" class="success-message"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
